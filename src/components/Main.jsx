@@ -12,6 +12,8 @@ import aside from '../assets/images/asidePublic.png'
 import bannerMidle from '../assets/images/bannerMidle.png'
 import asideDiscound from '../assets/images/asideDiscound.png'
 import infoAppImg from '../assets/images/infoAppImg.png'
+import app from '../assets/images/app.png';
+import card from '../assets/images/card.png'
 function Main() {
   return (
     <div className="main">
@@ -91,24 +93,24 @@ function Main() {
             <div className="application-inner container flex justify-between items-center">
                 <div className="install-app w-[410px] border flex items-center">
                     <div className="app-info w-[220px] ml-5">
-                        <h3 className="app-name text-[22px] font-bold">Доставка по всему Узбекистану</h3>
+                        <h3 className="app-name text-[20px] font-bold">Доставка по всему Узбекистану</h3>
                         <a href="#" className='text-[#8D909B] text-[16px] font-mideum mt-10 block'>Условия доставки</a>
                     </div>
                     <img src={infoAppImg} alt="img" />
                 </div> 
                 <div className="install-app w-[410px] border flex items-center">
-                    <div className="app-info w-[220px] ml-5">
-                        <h3 className="app-name text-[22px] font-bold">Доставка по всему Узбекистану</h3>
-                        <a href="#" className='text-[#8D909B] text-[16px] font-mideum mt-10 block'>Условия доставки</a>
+                    <div className="app-info w-[230px] ml-5">
+                        <h3 className="app-name text-[18px] font-bold">Установите мобильное приложение</h3>
+                        <a href="#" className='text-[#8D909B] text-[16px] font-mideum mt-10 block'>Установить</a>
                     </div>
-                    <img src={infoAppImg} alt="img" />
+                    <img src={app} alt="img" />
                 </div>
-                <div className="install-app w-[410px] border flex items-center">
-                    <div className="app-info w-[220px] ml-5">
-                        <h3 className="app-name text-[22px] font-bold">Доставка по всему Узбекистану</h3>
-                        <a href="#" className='text-[#8D909B] text-[16px] font-mideum mt-10 block'>Условия доставки</a>
+                <div className="install-app w-[410px] border flex items-center relative">
+                    <div className="app-info w-[200px] ml-4 absolute">
+                        <h3 className="app-name text-[19px] font-bold">Оплата наличными или картой</h3>
+                        <a href="#" className='text-[#8D909B] text-[16px] font-mideum mt-10 block'>Условия оплаты</a>
                     </div>
-                    <img src={infoAppImg} alt="img" />
+                    <img className='mt-[27px] ml-auto' src={card} alt="img" />
                 </div>
             </div>
         </section>
