@@ -16,7 +16,7 @@ function Card() {
     cardActions.current.classList.add('translate-x-[-75px]');
   }
   return (
-    <div ref={cardEl} onMouseOver={handleCardHover} onMouseLeave={handlCardLeave} className="card-main overflow-hidden p-2 w-[250px]">
+    <div ref={cardEl} onMouseOver={handleCardHover} onMouseLeave={handlCardLeave} className="card-main overflow-hidden p-2 w-[235px]">
       <div className="imgs-praduct relative ">        
           <img
             className="img-paraduct overflow-hidden"
@@ -28,7 +28,7 @@ function Card() {
         <p className="absolute bg-[#F5921C] text-white p-1 left-0 rounded-[3px] font-bold bottom-0">
           -54%
         </p>
-        <div ref={cardActions} className="translate-x-[-75px] show-praduct-info absolute top-6 left-0 z-10">
+        <div ref={cardActions} className="translate-x-[-75px] show-praduct-info absolute top-4 left-0 z-10">
           <a href="#" className="bg-[#666666] block rounded-[4px] text-white" >
             <img src={showPraduct} alt="showPraduct" className="p-2"/>
           </a>
@@ -45,28 +45,23 @@ function Card() {
           Книги
         </h4>
         <div className="rating-name overflow-hidden mt-1">
-            <h4 title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, impedit?"
-              className="praduct-name text-[16px] font-medium h-[51px] overflow-hidden"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-              impedit?
-            </h4>
+            <h4 title="Книги Коран" className="praduct-name text-[16px] font-medium h-[51px] overflow-hidden">Книги Коран  </h4>
           
           <div className="rating flex mt-1">
             <span>
-              <img src={star} alt="star" />
+              <img width={20} src={star} alt="star" />
             </span>
             <span>
-              <img src={star} alt="star" />
+              <img width={20} src={star} alt="star" />
             </span>
             <span>
-              <img src={star} alt="star" />
+              <img width={20} src={star} alt="star" />
             </span>
             <span>
-              <img src={star} alt="star" />
+              <img width={20} src={star} alt="star" />
             </span>
             <span>
-              <img src={star} alt="star" />
+              <img width={20} src={star} alt="star" />
             </span>
           </div>
         </div>        
