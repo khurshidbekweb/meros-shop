@@ -1,0 +1,23 @@
+/* Header css */
+.header-top-item-link:hover{
+    color: #01377F;
+}
+.adCard1{
+    background: url(../assets/images/adImg1.png);   
+    border-radius: 5px;
+}
+.adCard2{
+    background: url(../assets/images/adImg2.png); 
+    border-radius: 5px;
+}
+
+.main-praduct{
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+.card-main:hover{
+    box-shadow: 1px 2px 5px 2px silver;
+    border-radius: 5px;
+}
