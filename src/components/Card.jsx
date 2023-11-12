@@ -1,15 +1,22 @@
 import imgCard from "../assets/images/example.png";
 import star from "../assets/icons/star.svg";
+import showPraduct from '../assets/icons/eye.svg'
+import likePraduct from '../assets/icons/degree.svg'
+import addShop from '../assets/icons/addShop.svg'
 import { useRef } from "react";
+
 function Card() {
   const cardEl = useRef(null)
   const cardActions = useRef(null)
 
-  const handleCardHover = (e) => {
-    console.log(e);
+  const handleCardHover = () => {
+    cardActions.current.classList.remove('translate-x-[-75px]')
+  }
+  const handlCardLeave = () =>{
+    cardActions.current.classList.add('translate-x-[-75px]');
   }
   return (
-    <div ref={cardEl} onMouseOver={handleCardHover} className="card-main  p-2 w-[250px]">
+    <div ref={cardEl} onMouseOver={handleCardHover} onMouseLeave={handlCardLeave} className="card-main overflow-hidden p-2 w-[250px]">
       <div className="imgs-praduct relative ">        
           <img
             className="img-paraduct overflow-hidden"
@@ -21,8 +28,16 @@ function Card() {
         <p className="absolute bg-[#F5921C] text-white p-1 left-0 rounded-[3px] font-bold bottom-0">
           -54%
         </p>
-        <div ref={cardActions} id="praduct-show" className="show-praduct-info absolute bg-slate-500 p-5 top-6 left-0 py-10">
-
+        <div ref={cardActions} className="translate-x-[-75px] show-praduct-info absolute top-6 left-0 z-10">
+          <a href="#" className="bg-[#666666] block rounded-[4px] text-white" >
+            <img src={showPraduct} alt="showPraduct" className="p-2"/>
+          </a>
+          <button className="bg-[#666666] block rounded-[4px] text-white mt-2">
+            <img src={likePraduct} alt="degeree" className="p-2" />
+          </button>
+          <button className="bg-[#666666] block rounded-[4px] text-white mt-2">
+            <img src={addShop} alt="degeree" className="p-2" />
+          </button>
         </div>
       </div>
       <div className="info-praduct">

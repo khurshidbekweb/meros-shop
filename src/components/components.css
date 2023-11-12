@@ -20,4 +20,8 @@
 .card-main:hover{
     box-shadow: 1px 2px 5px 2px silver;
     border-radius: 5px;
+    transition: all 800ms;
+}
+.show-praduct-info{
+    transition: all ease-in-out 500ms;
 }
