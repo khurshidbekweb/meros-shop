@@ -7,3 +7,35 @@
     margin: 0 auto;
     padding: 0;
 }
+
+.btn-countrol-next::after{
+    content: "";
+    background-image: url("./assets/images/nextElm.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F4F7F8;
+    border-radius:4px;    
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 5px;
+    z-index: 999;
+    font-size: 23px;
+}
+
+.btn-countrol-prev::after{
+    content: "";
+    background-image: url("./assets/images/prevElm.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F4F7F8;
+    border-radius:4px;
+    position: absolute;
+    right: 40px; 
+    display: block;
+    width: 25px;
+    height: 25px;
+    z-index: 999;
+    font-size: 22px;
+}

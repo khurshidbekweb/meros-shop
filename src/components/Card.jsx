@@ -29,13 +29,13 @@ function Card() {
           -54%
         </p>
         <div ref={cardActions} className="translate-x-[-75px] show-praduct-info absolute top-4 left-0 z-10">
-          <a href="#" className="bg-[#666666] block rounded-[4px] text-white" >
+          <a href="#" className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white" >
             <img src={showPraduct} alt="showPraduct" className="p-2"/>
           </a>
-          <button className="bg-[#666666] block rounded-[4px] text-white mt-2">
+          <button className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white mt-2">
             <img src={likePraduct} alt="degeree" className="p-2" />
           </button>
-          <button className="bg-[#666666] block rounded-[4px] text-white mt-2">
+          <button className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white mt-2">
             <img src={addShop} alt="degeree" className="p-2" />
           </button>
         </div>
