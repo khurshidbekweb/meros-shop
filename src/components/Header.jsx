@@ -6,11 +6,32 @@ import search from '../assets/icons/searchHead.svg';
 import profil from '../assets/icons/profil.svg';
 import fovorit from '../assets/icons/fovorit.svg'
 import shoping from '../assets/icons/shop.svg';
+import CategoryModal from '../Modals/Category'
+import closeCtg from '../assets/icons/ctgClose.svg'
 // Css import
 import './components.css'
+import { useRef } from 'react';
 function Header() {
+    const categoryShow = useRef();
+    const overlay = useRef();
+    const imgCtg = useRef();
+    const btnCtg =useRef();
+    const showCategory = () =>{        
+        categoryShow.current.classList.toggle("hidden");
+        if(!categoryShow.current.classList.contains("hidden")){
+            imgCtg.current.setAttribute("src", closeCtg)
+            btnCtg.current.classList.remove("bg-[#32386B]")
+            btnCtg.current.classList.add("bg-[#F5921C]")
+            overlay.current.classList.remove("hidden")
+        }else{
+            imgCtg.current.setAttribute("src", catagory)
+            btnCtg.current.classList.add("bg-[#32386B]");
+            btnCtg.current.classList.remove("bg-[#F5921C]");
+            overlay.current.classList.add("hidden")
+        }
+    }
   return (
-    <div className="header bg-white">
+    <div className="header bg-white relative z-40">
         <div className="header--inner container">
             <div className="header-top w-[100%] flex justify-between items-center py-2">
                 <div className="language w-[220px] flex justify-between items-center">
@@ -32,7 +53,7 @@ function Header() {
             <hr />
             <div className="header-main w-[100%] flex justify-between items-center p-2">
                     <a href="#" className="header--link-img w-[150px]"><img width={155} src={logo} alt="logo" /></a>
-                    <button className="header-catagory bg-[#32386B] flex text-white p-2 rounded px-4 justify-between w-[120px]"><img src={catagory} alt="category" /> <p>Католог</p></button>
+                    <button ref={btnCtg} onClick={showCategory} className="header-catagory bg-[#32386B] flex text-white p-2 rounded px-4 justify-between items-center w-[120px]"><img ref={imgCtg} src={catagory} alt="category" /> <p>Католог</p></button>                    
                     <form className='flex items-center w-[580px]'>
                         <input type="search" name="search-praduct" id="search-praduct" className='p-2 rounded-l-lg w-[370px] border' placeholder='Поиск по товаром...'/>
                         <select className='p-2 px-4 border-t border-b' name="category-select" id="category-select-all">
@@ -93,6 +114,11 @@ function Header() {
                 </ul>
             </nav>
         </div>
+        <div ref={categoryShow} className="hidden z-40 absolute w-[100%] top-[100px] bg-white">
+            <div className="w-[1280px] mx-auto"><CategoryModal/></div>
+        </div>
+
+    <div ref={overlay} className="overlay hidden fixed w-[100%] h-[100vh] z-[-2] top-0"></div>
     </div>
   )
 }

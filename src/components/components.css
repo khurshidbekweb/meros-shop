@@ -24,4 +24,5 @@
 }
 .show-praduct-info{
     transition: all ease-in-out 500ms;
+    background: rgba(0, 0, 0, 0.349);
 }

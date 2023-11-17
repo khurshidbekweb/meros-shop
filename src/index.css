@@ -39,3 +39,7 @@
     z-index: 999;
     font-size: 22px;
 }
+.overlay{
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(1px);
+}
