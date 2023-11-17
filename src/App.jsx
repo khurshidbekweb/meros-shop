@@ -1,7 +1,11 @@
 // Components
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Main  from './components/Main'
+import Home  from './pages/Home'
+import Login from './pages/Login'
+import Erorr from './pages/Erorr'
+import { Route, Routes } from 'react-router-dom'
+
 
 function App() {     
 
@@ -10,7 +14,11 @@ function App() {
       <>
         <Header/>
         <main>
-          <Main/>
+          <Routes>
+            <Route path='/' element = {<Home/>}/>
+            <Route path='/login' element = {<Login/>}/>
+            <Route path='*' element= {<Erorr/>} />            
+          </Routes>
         </main>
         <Footer/>
       </>

@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../components/Card";
 
 // Import images
 import advertsing from "../assets/images/advertsingMain.png";

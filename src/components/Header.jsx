@@ -11,6 +11,7 @@ import closeCtg from '../assets/icons/ctgClose.svg'
 // Css import
 import './components.css'
 import { useRef } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 function Header() {
     const categoryShow = useRef();
     const overlay = useRef();
@@ -56,16 +57,16 @@ function Header() {
                     <button ref={btnCtg} onClick={showCategory} className="header-catagory bg-[#32386B] flex text-white p-2 rounded px-4 justify-between items-center w-[120px]"><img ref={imgCtg} src={catagory} alt="category" /> <p>Католог</p></button>                    
                     <form className='flex items-center w-[580px]'>
                         <input type="search" name="search-praduct" id="search-praduct" className='p-2 rounded-l-lg w-[370px] border' placeholder='Поиск по товаром...'/>
-                        <select className='p-2 px-4 border-t border-b' name="category-select" id="category-select-all">
-                            <option className='p-2' value="" disabled selected hidden>Все категории</option>
+                        <select className='p-[10.5px] px-4 border-t border-b' name="category-select" id="category-select-all">
+                            <option value="content"  selected hidden>Все категории</option>
                         </select>
                         <button className='bg-[#32386B] p-[9px] px-3 rounded-r-[5px]'><img src={search} alt="search-all" /></button>
                     </form>
                     <div className="header--necessary flex justify-between items-center w-[310px]">
-                            <a href="#" className='flex w-[75px] justify-between'>
+                            <NavLink to="login" className='flex w-[75px] justify-between'>
                                 <img src={profil} alt="profil" />
                                 <p>Войти</p>
-                            </a>    
+                            </NavLink>    
                             <a href="#" className='flex w-[105px] justify-between'>
                                 <img src={fovorit} alt="profil" />
                                 <p>Избранное</p>
@@ -117,7 +118,7 @@ function Header() {
         <div ref={categoryShow} className="hidden z-40 absolute w-[100%] top-[100px] bg-white">
             <div className="w-[1280px] mx-auto"><CategoryModal/></div>
         </div>
-
+        <Outlet/>
     <div ref={overlay} className="overlay hidden fixed w-[100%] h-[100vh] z-[-2] top-0"></div>
     </div>
   )
