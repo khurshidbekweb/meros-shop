@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "./erorr.scss";
 
 function Erorr() {
@@ -16,9 +16,9 @@ function Erorr() {
 
                 <p>the page you are looking for not avaible!</p>
 
-                <a href="" className="link_404">
+                <NavLink to="/" className="link_404">
                   Go to Home
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

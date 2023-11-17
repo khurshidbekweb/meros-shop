@@ -57,8 +57,9 @@ function Header() {
                     <button ref={btnCtg} onClick={showCategory} className="header-catagory bg-[#32386B] flex text-white p-2 rounded px-4 justify-between items-center w-[120px]"><img ref={imgCtg} src={catagory} alt="category" /> <p>Католог</p></button>                    
                     <form className='flex items-center w-[580px]'>
                         <input type="search" name="search-praduct" id="search-praduct" className='p-2 rounded-l-lg w-[370px] border' placeholder='Поиск по товаром...'/>
-                        <select className='p-[10.5px] px-4 border-t border-b' name="category-select" id="category-select-all">
+                        <select className='p-2 px-4 border-t border-b' name="category-select" id="category-select-all">
                             <option value="content"  selected hidden>Все категории</option>
+                            <option value="content">Все категории</option>
                         </select>
                         <button className='bg-[#32386B] p-[9px] px-3 rounded-r-[5px]'><img src={search} alt="search-all" /></button>
                     </form>
