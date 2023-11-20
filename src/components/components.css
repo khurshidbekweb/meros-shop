@@ -10,7 +10,6 @@
     background: url(../assets/images/adImg2.png); 
     border-radius: 5px;
 }
-
 .main-praduct{
     display: grid;
     grid-template-columns: repeat(4, 240px);
@@ -24,5 +23,4 @@
 }
 .show-praduct-info{
     transition: all ease-in-out 500ms;
-    background: rgba(0, 0, 0, 0.349);
 }

@@ -5,6 +5,8 @@ import Home  from './pages/Home'
 import Login from './pages/Login'
 import Erorr from './pages/Erorr'
 import { Route, Routes } from 'react-router-dom'
+import Basket from './pages/Basket'
+import Favorites from './pages/Favorites'
 
 
 function App() {     
@@ -17,6 +19,8 @@ function App() {
           <Routes>
             <Route path='/' element = {<Home/>}/>
             <Route path='/login' element = {<Login/>}/>
+            <Route path='/bookmark' element={<Favorites/>}/>
+            <Route path='/basket' element={<Basket/>}/>
             <Route path='*' element= {<Erorr/>} />            
           </Routes>
         </main>

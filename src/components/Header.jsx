@@ -53,8 +53,8 @@ function Header() {
             </div>
             <hr />
             <div className="header-main w-[100%] flex justify-between items-center p-2">
-                    <a href="#" className="header--link-img w-[150px]"><img width={155} src={logo} alt="logo" /></a>
-                    <button ref={btnCtg} onClick={showCategory} className="header-catagory bg-[#32386B] flex text-white p-2 rounded px-4 justify-between items-center w-[120px]"><img ref={imgCtg} src={catagory} alt="category" /> <p>Католог</p></button>                    
+                    <NavLink to="/" className="header--link-img w-[150px]"><img width={155} src={logo} alt="logo" /></NavLink>
+                    <button ref={btnCtg} onClick={showCategory} className="header-catagory transition-all duration-150 bg-[#32386B] flex text-white p-2 rounded px-4 justify-between items-center w-[120px]"><img ref={imgCtg} src={catagory} alt="category" /> <p>Католог</p></button>                    
                     <form className='flex items-center w-[580px]'>
                         <input type="search" name="search-praduct" id="search-praduct" className='p-2 rounded-l-lg w-[370px] border' placeholder='Поиск по товаром...'/>
                         <select className='p-2 px-4 border-t border-b' name="category-select" id="category-select-all">
@@ -68,14 +68,14 @@ function Header() {
                                 <img src={profil} alt="profil" />
                                 <p>Войти</p>
                             </NavLink>    
-                            <a href="#" className='flex w-[105px] justify-between'>
+                            <NavLink to="bookmark" className='flex w-[105px] justify-between'>
                                 <img src={fovorit} alt="profil" />
                                 <p>Избранное</p>
-                            </a>
-                            <a href="#" className='flex w-[95px] justify-between'>
+                            </NavLink>
+                            <NavLink to="basket" className='flex w-[95px] justify-between'>
                                 <img src={shoping} alt="profil" />
                                 <p>Корзина</p>
-                            </a>                    
+                            </NavLink>                    
                     </div>
             </div>
             <nav className="header-bottom">
@@ -116,8 +116,8 @@ function Header() {
                 </ul>
             </nav>
         </div>
-        <div ref={categoryShow} className="hidden z-40 absolute w-[100%] top-[100px] bg-white">
-            <div className="w-[1280px] mx-auto"><CategoryModal/></div>
+        <div ref={categoryShow} className="hidden z-40 absalute w-[100%] top-[100px] transition-all duration-700">
+            <CategoryModal/>
         </div>
         <Outlet/>
     <div ref={overlay} className="overlay hidden fixed w-[100%] h-[100vh] z-[-2] top-0"></div>
