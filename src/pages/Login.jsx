@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link,  Outlet } from "react-router-dom";
 
 function Login() {
   const name = useRef()
@@ -22,9 +23,11 @@ function Login() {
                   <input ref={password} type="password"  className="block rounded px-4 py-3 mt-5 w-[100%] border" />
                 </label>
                 <button onClick={handleSubmit} className="btn-group rounded text-[22px] text-white font-bold block px-4 py-3 mt-10 shadow w-[100%] border bg-green-600">LOG UP</button>
+                <Link to="/register" className="btn-group rounded text-[14px] text-center text-purple-700 font-bold block px-4 py-3 mt-4 w-[100%]">LOG UP</Link>
               </form>
-            </div>
-        </div>
+            </div>       
+        </div>   
+        <Outlet/>     
     </div>
   )
 }

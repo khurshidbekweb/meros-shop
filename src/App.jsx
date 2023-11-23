@@ -7,6 +7,7 @@ import Erorr from './pages/Erorr'
 import { Route, Routes } from 'react-router-dom'
 import Basket from './pages/Basket'
 import Favorites from './pages/Favorites'
+import SingUp from './pages/SingUp'
 
 
 function App() {     
@@ -19,10 +20,11 @@ function App() {
           <Routes>
             <Route path='/' element = {<Home/>}/>
             <Route path='/login' element = {<Login/>}/>
+            <Route path='register' element={<SingUp/>}/>              
             <Route path='/bookmark' element={<Favorites/>}/>
             <Route path='/basket' element={<Basket/>}/>
             <Route path='*' element= {<Erorr/>} />            
-          </Routes>
+          </Routes>          
         </main>
         <Footer/>
       </>

@@ -18,7 +18,7 @@ function BasketCart() {
                     <div className="bookmark-count flex items-center border relative p-1">
                         <button className="text-[25px] font-bold p-2">
                             <span className="w-[15px] block h-[2px] bg-slate-400"></span>
-                        </button>
+                        </button>    
                         <p className="text-[20px] font-bold px-1">1</p>
                         <button className="font-bold p-2">
                             <span className="w-[15px] block h-[2px] bg-slate-400"></span>

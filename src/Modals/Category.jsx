@@ -57,7 +57,6 @@ function Category() {
               <img height={60} src={Brend} alt="bernd" />
               <img height={60} src={Brend} alt="bernd" />
               <img height={60} src={Brend} alt="bernd" />
-              <img height={60} src={Brend} alt="bernd" />
             </div>
             </div>
           </div>
