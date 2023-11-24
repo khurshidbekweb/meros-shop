@@ -1,68 +1,173 @@
-import './modal.css'
+import "./modal.css";
 
-import Brend from '../assets/images/brendImg.png'
+import Brend from "../assets/images/brendImg.png";
+import { useState } from "react";
 
+const data = [
+  {
+    id: 1,
+    name: "Kiyimlar",
+    subtitle: [
+      {
+        id: Math.random(),
+        name: "Qishki kitimlar",
+        subtitle: [
+          {
+            id: Math.random(),
+            name: "Kurtka",
+          },
+          {
+            id: Math.random(),
+            name: "Sapok",
+          },
+        ],
+      },
+      {
+        id: Math.random(),
+        name: "Yozgi kiyim",
+        subtitle: [
+          {
+            id: Math.random(),
+            name: "Fudbolka",
+          },
+          {
+            id: Math.random(),
+            name: "Shortik",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "aksesuvarlar",
+    subtitle: [
+      {
+        id: Math.random(),
+        name: "quloqchinlar",
+        subtitle: [
+          {
+            id: Math.random(),
+            name: "navushnik",
+          },
+          {
+            id: Math.random(),
+            name: "Airpods",
+          },
+        ],
+      },
+      {
+        id: Math.random(),
+        name: "Chehollar",
+        subtitle: [
+          {
+            id: Math.random(),
+            name: "iphone8",
+          },
+          {
+            id: Math.random(),
+            name: "A90",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Maishiy texnika",
+    subtitle: [
+      {
+        id: Math.random(),
+        name: "Go'zallik uchun texnika",
+        subtitle: [
+          {
+            id: Math.random(),
+            name: "Soch turmaklash",
+          },
+          {
+            id: Math.random(),
+            name: "Soch kesish",
+          },
+        ],
+      },
+      {
+        id: Math.random(),
+        name: "Oshxona buyumlari",
+        subtitle: [
+          {
+            id: Math.random(),
+            name: "GAz plita",
+          },
+          {
+            id: Math.random(),
+            name: "KIr moshina",
+          },
+        ],
+      },
+    ],
+  }
+];
 
 function Category() {
+  const [subcategories, setSubcategories] = useState(null);
+  const handleHover = (id) => {
+    console.log(id);
+    const categories = data.find((e) => e.id == id);
+    setSubcategories(categories);
+  };
+
+  console.log(subcategories);
+
   return (
-    <div className="w-[100%] mx-auto transition-all duration-150 overflow-hidden">      
+    <div className="w-[100%] mx-auto transition-all duration-150 overflow-hidden">
       <div className="category-wrapper w-[1530px] flex items-start mx-auto bg-white">
         <ul className="w-[470px] h-[100%] pb-5 bg-[#F4F7F8]">
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            <li className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"><a href="#" className="category--link">Category-01</a></li>
-            
+          {data?.length &&
+            data.map((c) => {
+              return (
+                <li
+                  key={c.id}
+                  onMouseOver={() => handleHover(c.id)}
+                  className="category w-[340px] ml-auto rounded-l-[5px] hover:bg-white hover:text-[#F5921C] p-2 px-7 font-bold text-[18px]"
+                >
+                  <a href="#" className="category--link">
+                    {c.name}
+                  </a>
+                </li>
+              );
+            })}
         </ul>
-          <div className="chald-category-wrap w-[1080px] p-3">
-            <div className="w-[930px] flex items-start gap-[30px]">
+        <div className="chald-category-wrap w-[1080px] p-3">
+          <div className="w-[930px] flex items-start gap-[30px]">
             <div className="category-childs-in-category w-[65%] flex flex-wrap gap-6">
-              <ul className="category-childs-list w-[250px]"> Книги мира
-                <li className="childs-item"><a href="#" className="links-child">Child-1</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-2</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-3</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-4</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-5</a></li>
+              <ul>
+                {subcategories?.subtitle?.length &&
+                  subcategories.subtitle .map((sub) => {
+                    return (
+                      <li key={sub.id}>
+                        <h2 className="font-bold text-[21px]">{sub.name}</h2>
+                        <ul>
+                          {sub.subtitle?.length &&
+                            sub.subtitle.map((e) => {
+                              return <li key={e.id}>{e.name}</li>;
+                            })}
+                        </ul>
+                      </li>
+                    );
+                  })}
               </ul>
-              <ul className="category-childs-list w-[250px]"> Книги мира
-                <li className="childs-item"><a href="#" className="links-child">Child-1</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-2</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-3</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-4</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-5</a></li>
-              </ul> 
-              <ul className="category-childs-list w-[250px] bg-silver"> Книги мира
-                <li className="childs-item"><a href="#" className="links-child">Child-1</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-2</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-3</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-4</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-5</a></li>
-              </ul>
-              <ul className="category-childs-list w-[250px]"> Книги мира
-                <li className="childs-item"><a href="#" className="links-child">Child-1</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-2</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-3</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-4</a></li>
-                <li className="childs-item"><a href="#" className="links-child">Child-5</a></li>
-              </ul> 
             </div>
             <div className="category-chald-brends text-center w-[30%]">
               <img height={60} src={Brend} alt="bernd" />
               <img height={60} src={Brend} alt="bernd" />
               <img height={60} src={Brend} alt="bernd" />
               <img height={60} src={Brend} alt="bernd" />
-              <img height={60} src={Brend} alt="bernd" />
-            </div>
             </div>
           </div>
-      </div>      
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Category
+export default Category;
