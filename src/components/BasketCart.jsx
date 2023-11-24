@@ -1,6 +1,18 @@
+import { useState } from 'react';
 import praductImg from '../assets/images/example.png'
 
 function BasketCart() {
+    const [count, setCount] = useState(1);
+    const incrementPraduckt = () =>{
+        setCount(count+1)
+    }
+    const decrementPraduct = ()=>{
+        if(count>1){
+            setCount(count-1);
+        }else{
+            setCount(count);
+        }
+    }
   return (
     <div className="basket flex items-start gap-5 mb-4">
         <div className="basket-card border w-[850px]  p-2 py-5 flex justify-between items-center  hover:shadow">
@@ -16,11 +28,11 @@ function BasketCart() {
                         <p className="color">Rang: <strong>Sariq</strong></p>
                     </div>
                     <div className="bookmark-count flex items-center border relative p-1">
-                        <button className="text-[25px] font-bold p-2">
+                        <button className="text-[25px] font-bold p-2" onClick={decrementPraduct}>
                             <span className="w-[15px] block h-[2px] bg-slate-400"></span>
                         </button>    
-                        <p className="text-[20px] font-bold px-1">1</p>
-                        <button className="font-bold p-2">
+                        <p className="text-[20px] font-bold px-1">{count}</p>
+                        <button className="font-bold p-2" onClick={incrementPraduckt}>
                             <span className="w-[15px] block h-[2px] bg-slate-400"></span>
                             <span className="w-[15px] block absolute rotate-[90deg] top-[18px] h-[2px] bg-slate-400"></span>
                         </button>
