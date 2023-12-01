@@ -1,32 +1,38 @@
 // Components
-import Header from './components/Header'
-import Footer from './components/Footer'
 import Home  from './pages/Home'
 import Login from './pages/Login'
 import Erorr from './pages/Erorr'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Basket from './pages/Basket'
 import Favorites from './pages/Favorites'
 import SingUp from './pages/SingUp'
+import Dashboard from './pages/Dashboard'
+import { authGourd } from './hooks/useAuthGuard'
+import { useEffect } from 'react'
 
 
 function App() {     
 
+  const isAuth = authGourd();
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(!isAuth){
+      navigate("/login")
+    }
+  }, [])
 
     return(
       <>
-        <Header/>
-        <main>
           <Routes>
             <Route path='/' element = {<Home/>}/>
             <Route path='/login' element = {<Login/>}/>
             <Route path='register' element={<SingUp/>}/>              
             <Route path='/bookmark' element={<Favorites/>}/>
             <Route path='/basket' element={<Basket/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='*' element= {<Erorr/>} />            
-          </Routes>          
-        </main>
-        <Footer/>
+          </Routes>
       </>
     )
 }

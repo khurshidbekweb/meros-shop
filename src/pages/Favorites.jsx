@@ -1,9 +1,13 @@
 import Card from "../components/Card"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 
 function Favorites() {
   return (
-    <div className="favorites">
+    <>
+     <Header/>
+      <div className="favorites">
         <div className="container">
             <div className="favorites_inner mt-5 flex flex-wrap items-start gap-6">
                 <Card/>
@@ -15,7 +19,9 @@ function Favorites() {
                 <Card/>
             </div>
         </div>
-    </div>
+      </div>
+       <Footer/>
+    </>
   )
 }
 

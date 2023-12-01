@@ -1,6 +1,5 @@
 import "./modal.css";
 
-import Brend from "../assets/images/brendImg.png";
 import { useState } from "react";
 
 const data = [
@@ -35,8 +34,13 @@ const data = [
             name: "Shortik",
           },
         ],
-      },
+      }
     ],
+    brend: [
+      {
+        logo: 'https://picsum.photos/id/110/60/60'        
+      }
+    ]
   },
   {
     id: 2,
@@ -71,6 +75,17 @@ const data = [
         ],
       },
     ],
+    brend: [
+      {
+        logo: 'https://picsum.photos/id/211/60/60'        
+      },
+      {
+        logo: 'https://picsum.photos/id/121/60/60'        
+      },
+      {
+        logo: 'https://picsum.photos/id/311/60/60'        
+      }
+    ]
   },
   {
     id: 3,
@@ -105,18 +120,20 @@ const data = [
         ],
       },
     ],
+    brend: [
+      {
+        logo: 'https://picsum.photos/id/213/60/60'        
+      }
+    ]
   }
 ];
 
 function Category() {
   const [subcategories, setSubcategories] = useState(null);
   const handleHover = (id) => {
-    console.log(id);
     const categories = data.find((e) => e.id == id);
     setSubcategories(categories);
   };
-
-  console.log(subcategories);
 
   return (
     <div className="w-[100%] mx-auto transition-all duration-150 overflow-hidden">
@@ -158,10 +175,13 @@ function Category() {
               </ul>
             </div>
             <div className="category-chald-brends text-center w-[30%]">
-              <img height={60} src={Brend} alt="bernd" />
-              <img height={60} src={Brend} alt="bernd" />
-              <img height={60} src={Brend} alt="bernd" />
-              <img height={60} src={Brend} alt="bernd" />
+              {subcategories?.brend?.length && subcategories?.brend.map((brend) => {
+                console.log(brend);
+                return (
+                  <img key={brend.id} height={60} src={brend.logo} alt="bernd" />                   
+                  )
+                })
+              }
             </div>
           </div>
         </div>

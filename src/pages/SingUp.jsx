@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 function SingUp() {
   return (
@@ -29,6 +30,7 @@ function SingUp() {
                     </label>
                 </div>
                 <button className="btn-group rounded text-[22px] text-white font-bold block px-4 py-3 mt-10 shadow w-[100%] border bg-green-600">LOG UP</button>
+                <NavLink to="/login" className="text-[18px] text-center block mt-2 font-medium text-red-400">Sing In</NavLink>
               </form>
             </div>            
         </div>

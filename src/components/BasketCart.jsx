@@ -37,7 +37,7 @@ function BasketCart() {
                             <span className="w-[15px] block absolute rotate-[90deg] top-[18px] h-[2px] bg-slate-400"></span>
                         </button>
                     </div>
-                    <h4 className="prins font-bold">236 000 so`m</h4>
+                    <h4 className="prins font-bold">{count*226} 000 so`m</h4>
                 </div>
             </div>
         </div>

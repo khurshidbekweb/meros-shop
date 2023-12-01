@@ -64,15 +64,15 @@ function Header() {
                         <button className='bg-[#32386B] p-[9px] px-3 rounded-r-[5px]'><img src={search} alt="search-all" /></button>
                     </form>
                     <div className="header--necessary flex justify-between items-center w-[310px]">
-                            <NavLink to="login" className='flex w-[75px] justify-between'>
+                            <NavLink to="/login" className='flex w-[75px] justify-between'>
                                 <img src={profil} alt="profil" />
                                 <p>Войти</p>
                             </NavLink>    
-                            <NavLink to="bookmark" className='flex w-[105px] justify-between'>
+                            <NavLink to="/bookmark" className='flex w-[105px] justify-between'>
                                 <img src={fovorit} alt="profil" />
                                 <p>Избранное</p>
                             </NavLink>
-                            <NavLink to="basket" className='flex w-[95px] justify-between'>
+                            <NavLink to="/basket" className='flex w-[95px] justify-between'>
                                 <img src={shoping} alt="profil" />
                                 <p>Корзина</p>
                             </NavLink>                    

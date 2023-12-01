@@ -1,10 +1,14 @@
 import BasketCart from "../components/BasketCart"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 
 
 function Basket() {    
   return (
-    <div className="basket">
+    <>
+       <Header/>
+        <div className="basket">
         <div className="container">
             <div className="basket_inner flex gap-6 mt-4">
                 <div className="basket-elements">
@@ -43,6 +47,8 @@ function Basket() {
             </div>
         </div>
     </div>
+    <Footer/>
+    </>
   )
 }
 
