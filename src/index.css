@@ -43,3 +43,7 @@
     background: rgba(0, 0, 0, 0.50);
     backdrop-filter: blur(1px);
 }
+.active-child-img{
+    border: 3px solid green !important;
+    box-shadow: #F4F7F8;
+}

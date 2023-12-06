@@ -5,12 +5,12 @@ import {custumAxios} from '../service/LoginAuth'
 
 
 function Login() {
-  const [user, setUser] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [user, setUser] = useState(0);
+  const [password, setPassword] = useState(0);
   const dashNavigate = useNavigate()
+
   const userLogin = (e) =>{
     e.preventDefault();
-
     const userInfo = {
       username: user,
       password: password

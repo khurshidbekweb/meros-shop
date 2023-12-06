@@ -9,6 +9,7 @@ import SingUp from './pages/SingUp'
 import Dashboard from './pages/Dashboard'
 import { authGourd } from './hooks/useAuthGuard'
 import { useEffect } from 'react'
+import View from './pages/View'
 
 
 function App() {     
@@ -31,6 +32,7 @@ function App() {
             <Route path='/bookmark' element={<Favorites/>}/>
             <Route path='/basket' element={<Basket/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path='/view' element={<View/>}/>
             <Route path='*' element= {<Erorr/>} />            
           </Routes>
       </>

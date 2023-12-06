@@ -176,7 +176,6 @@ function Category() {
             </div>
             <div className="category-chald-brends text-center w-[30%]">
               {subcategories?.brend?.length && subcategories?.brend.map((brend) => {
-                console.log(brend);
                 return (
                   <img key={brend.id} height={60} src={brend.logo} alt="bernd" />                   
                   )

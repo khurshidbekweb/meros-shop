@@ -4,6 +4,8 @@ import showPraduct from '../assets/icons/eye.svg'
 import likePraduct from '../assets/icons/degree.svg'
 import addShop from '../assets/icons/addShop.svg'
 import { useRef } from "react";
+import { NavLink } from "react-router-dom";
+// import Degrre from './Degrre'
 
 function Card() {
   const cardEl = useRef(null)
@@ -14,6 +16,12 @@ function Card() {
   }
   const handlCardLeave = () =>{
     cardActions.current.classList.add('translate-x-[-75px]');
+  }
+  const data = [];
+  const fovoritePraduct=(id)=>{
+    data.map(praduct => {
+      return praduct.id == id 
+    })
   }
   return (
     <div ref={cardEl} onMouseOver={handleCardHover} onMouseLeave={handlCardLeave} className="card-main overflow-hidden p-2 w-[235px]">
@@ -29,10 +37,10 @@ function Card() {
           -54%
         </p>
         <div ref={cardActions} className="translate-x-[-75px] show-praduct-info absolute top-4 left-0 z-10">
-          <a href="#" className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white" >
+          <NavLink to="/view" className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white" >
             <img src={showPraduct} alt="showPraduct" className="p-2"/>
-          </a>
-          <button className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white mt-2">
+          </NavLink>
+          <button onClick={(e)=>fovoritePraduct(e)} className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white mt-2">
             <img src={likePraduct} alt="degeree" className="p-2" />
           </button>
           <button className="bg-[#666666] hover:bg-[#F5921C] transition-colors block rounded-[4px] text-white mt-2">
@@ -46,7 +54,7 @@ function Card() {
         </h4>
         <div className="rating-name overflow-hidden mt-1">
             <h4 title="Книги Коран" className="praduct-name text-[16px] font-medium h-[51px] overflow-hidden">Книги Коран  </h4>
-          
+          {/* <Degrre/> */}
           <div className="rating flex mt-1">
             <span>
               <img width={20} src={star} alt="star" />
