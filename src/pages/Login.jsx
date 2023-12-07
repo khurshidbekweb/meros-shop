@@ -19,6 +19,7 @@ function Login() {
     if(userInfo.username.length===0 || userInfo.password.length===0){
       alert("enter tehr user name or password")
     }else{
+      console.log(userInfo);
       custumAxios.auth(userInfo).then(res=> {
         if(res.status===200){
           localStorage.setItem("token", res.data.token)
